@@ -1,35 +1,35 @@
 const express = require('express');
+const { Pool } = require('pg');
 const path = require('path');
-const fs = require('fs');
 
 const app = express();
-const DB_PATH = process.env.DB_PATH || './wellness.db.json';
+const pool = new Pool({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
 
-function loadData() {
-  try {
-    return JSON.parse(fs.readFileSync(DB_PATH, 'utf8'));
-  } catch {
-    return {};
-  }
-}
-
-function saveData(data) {
-  fs.writeFileSync(DB_PATH, JSON.stringify(data, null, 2));
-}
+pool.query(`
+  CREATE TABLE IF NOT EXISTS logs (
+    date TEXT PRIMARY KEY,
+    data JSONB NOT NULL,
+    updated_at TIMESTAMPTZ DEFAULT NOW()
+  )
+`);
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/api/logs', (req, res) => {
-  res.json(loadData());
+app.get('/api/logs', async (req, res) => {
+  const { rows } = await pool.query('SELECT date, data FROM logs');
+  const result = {};
+  rows.forEach(r => { result[r.date] = r.data; });
+  res.json(result);
 });
 
-app.post('/api/log', (req, res) => {
+app.post('/api/log', async (req, res) => {
   const { date, data } = req.body;
   if (!date || !data) return res.status(400).json({ error: 'missing date or data' });
-  const db = loadData();
-  db[date] = data;
-  saveData(db);
+  await pool.query(
+    'INSERT INTO logs (date, data, updated_at) VALUES ($1, $2, NOW()) ON CONFLICT (date) DO UPDATE SET data = $2, updated_at = NOW()',
+    [date, data]
+  );
   res.json({ ok: true });
 });
 
