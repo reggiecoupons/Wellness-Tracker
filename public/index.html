@@ -547,7 +547,7 @@ function buildTrends() {
     btn.className='tbtn'+(activeTCat===c.id?' on':'');
     btn.textContent=c.label;
     btn.style.setProperty('--tc',c.color);
-    if(activeTCat===c.id){ btn.style.borderColor=c.color; btn.style.color=c.color; }
+    if(activeTCat===c.id){ btn.style.background=c.color; btn.style.borderColor=c.color; }
     btn.onclick=function(){ activeTCat=c.id; buildTrends(); };
     tbtns.appendChild(btn);
   });
