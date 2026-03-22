@@ -1,39 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
   <rect width="512" height="512" rx="110" fill="#16161b"/>
-  <!-- Mane outer -->
-  <circle cx="256" cy="256" r="200" fill="#c8860a"/>
-  <!-- Mane inner -->
-  <circle cx="256" cy="256" r="155" fill="#e6a020"/>
-  <!-- Face -->
-  <ellipse cx="256" cy="268" rx="115" ry="120" fill="#f5c842"/>
-  <!-- Forehead shadow -->
-  <ellipse cx="256" cy="200" rx="90" ry="50" fill="#e6a020"/>
-  <!-- Left ear -->
-  <polygon points="148,140 118,90 178,115" fill="#c8860a"/>
-  <!-- Right ear -->
-  <polygon points="364,140 394,90 334,115" fill="#c8860a"/>
-  <!-- Left eye -->
-  <ellipse cx="218" cy="248" rx="22" ry="18" fill="#1a1a1a"/>
-  <ellipse cx="214" cy="244" rx="7" ry="6" fill="#fff" opacity="0.4"/>
-  <!-- Right eye -->
-  <ellipse cx="294" cy="248" rx="22" ry="18" fill="#1a1a1a"/>
-  <ellipse cx="290" cy="244" rx="7" ry="6" fill="#fff" opacity="0.4"/>
-  <!-- Brow left - stern look -->
-  <rect x="196" y="224" width="44" height="7" rx="3" fill="#c8860a" transform="rotate(-10,218,227)"/>
-  <!-- Brow right - stern look -->
-  <rect x="272" y="224" width="44" height="7" rx="3" fill="#c8860a" transform="rotate(10,294,227)"/>
-  <!-- Nose -->
-  <ellipse cx="256" cy="292" rx="28" ry="18" fill="#d4852a"/>
-  <!-- Nostrils -->
-  <ellipse cx="244" cy="298" rx="8" ry="6" fill="#b06010"/>
-  <ellipse cx="268" cy="298" rx="8" ry="6" fill="#b06010"/>
-  <!-- Mouth - straight stern line -->
-  <line x1="228" y1="318" x2="284" y2="318" stroke="#b06010" stroke-width="5" stroke-linecap="round"/>
-  <!-- Whisker dots -->
-  <circle cx="200" cy="305" r="4" fill="#c8860a"/>
-  <circle cx="185" cy="312" r="4" fill="#c8860a"/>
-  <circle cx="170" cy="318" r="4" fill="#c8860a"/>
-  <circle cx="312" cy="305" r="4" fill="#c8860a"/>
-  <circle cx="327" cy="312" r="4" fill="#c8860a"/>
-  <circle cx="342" cy="318" r="4" fill="#c8860a"/>
+  <!-- Left outer weight -->
+  <rect x="40" y="196" width="60" height="120" rx="14" fill="#8b7ff5"/>
+  <!-- Left inner weight -->
+  <rect x="108" y="216" width="44" height="80" rx="10" fill="#8b7ff5"/>
+  <!-- Bar -->
+  <rect x="152" y="240" width="208" height="32" rx="8" fill="#c0bde8"/>
+  <!-- Right inner weight -->
+  <rect x="360" y="216" width="44" height="80" rx="10" fill="#8b7ff5"/>
+  <!-- Right outer weight -->
+  <rect x="412" y="196" width="60" height="120" rx="14" fill="#8b7ff5"/>
 </svg>
