@@ -5,8 +5,8 @@
   "start_url": "/Wellness-Tracker/",
   "scope": "/Wellness-Tracker/",
   "display": "standalone",
-  "background_color": "#0d0d10",
-  "theme_color": "#0d0d10",
+  "background_color": "#2a2d1a",
+  "theme_color": "#3d4127",
   "orientation": "portrait",
   "icons": [
     {
